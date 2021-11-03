@@ -12,14 +12,29 @@ class calcComb():
     def get_listStringa(self):
         return self.__listStringa
 
-    def setStringa(self):
-        try:
-            self.__stringa=str(self.__stringa)
+    def setStringa(self,str):
+        self.__N = len(stringa)
+        self.__stringa = str
+        self.__listStringa = list(stringa)
 
-        except ValueError:
-            print("errore, inserisci una parola)")
-        
-    def combUtil(self):
+    def charRipetuti(self):
+
+        word = list(parola) 
+        caratteriripetuti={}
+        nCaratteri = 0
+        count = 0
+
+        for i in word:
+            if (i in caratteriripetuti): 
+                caratteriripetuti[str(i)] += 1
+        else:
+            caratteriripetuti[str(i)] = 1 
+        for i in caratteriripetuti:
+            if caratteriripetuti[i]>1:
+                count+=1
+                nCaratteri += caratteriripetuti[i] 
+                
+    def combUtil(self,):
         f = open("C:/Users/Renato/OneDrive/Desktop/coding/oop/words.italian.txt", 'r')
         for riga in f:
 
@@ -30,5 +45,17 @@ class calcComb():
            #else:
                #print("non è una parola italiana")
 
-casa=calcComb("casa")
-casa.combUtil()
+    def fattoriale(n):
+        '''
+        implementare una qualunque versione della funzione fattoriale
+        '''
+
+    def coeffBinom(n, k):
+        ''' 
+        implementare la formula del coefficiente binomiale a partire dal fattoriale
+        '''
+        pass
+
+parola= charRipetuti(str(input("inserisci una stringa")))
+parola.charRipetuti()
+
