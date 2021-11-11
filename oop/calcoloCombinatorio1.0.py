@@ -1,3 +1,4 @@
+from itertools import permutations
 class calcComb():
 
     def __init__(self, stringa):
@@ -17,6 +18,25 @@ class calcComb():
         self.__stringa = str
         self.__listStringa = list(stringa)
 
+    def anagrammi(self):
+        lettere = list(parola)
+
+        permutazioni = list(permutations(lettere))
+
+        temp = ''
+
+        anagrammi = []
+
+        for i in permutazioni:
+
+            for carattere in i:
+                temp += carattere
+
+            anagrammi.append(temp)
+
+            temp = ''
+
+
     def charRipetuti(self):
 
         word = list(parola) 
@@ -34,28 +54,36 @@ class calcComb():
                 count+=1
                 nCaratteri += caratteriripetuti[i] 
                 
-    def combUtil(self,):
-        f = open("C:/Users/Renato/OneDrive/Desktop/coding/oop/words.italian.txt", 'r')
+    def combUtil(self):
+        words = 'words.italian.txt'
+        f = open(words, 'r')
         for riga in f:
 
            p=f.readline()
 
            if self.__stringa in p:
-               print("è una parola italiana")
-           #else:
-               #print("non è una parola italiana")
+               return("è una parola italiana")
+           if parola == p[:-1]:
+               return("vero")
 
     def fattoriale(n):
-        '''
-        implementare una qualunque versione della funzione fattoriale
-        '''
+        if n==0:
+            return 1
+        else:
+            return n*fattoriale(n-1)
+
 
     def coeffBinom(n, k):
-        ''' 
-        implementare la formula del coefficiente binomiale a partire dal fattoriale
-        '''
-        pass
+        if y == 1 or y == x:
+           return(1)
+        if y > x:
+            return(0)
+        else:
+            a = fattoriale(x)
+            b = fattoriale(y)
+            div = a // (b*(x-y))
+        return(div)  
 
-parola= charRipetuti(str(input("inserisci una stringa")))
-parola.charRipetuti()
+parola= calcComb(str(input("inserisci una stringa")))
+parola.combUtil()
 
