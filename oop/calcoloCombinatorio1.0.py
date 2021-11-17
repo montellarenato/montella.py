@@ -74,6 +74,8 @@ class calcComb():
 
 
     def coeffBinom(n, k):
+        x = len(parola)
+        y = int(input("Enter a value for y: "))
         if y == 1 or y == x:
            return(1)
         if y > x:
